@@ -3,6 +3,7 @@ import os
 
 file_path = "markdown"
 files = os.listdir(file_path)
+files.sort()
 for file in files:
     if file.endswith(".md"):
         with open(f"{file_path}/{file}", "r", encoding="utf-8") as f:
