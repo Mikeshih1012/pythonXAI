@@ -1,165 +1,148 @@
-class1
+### Python 程式設計入門筆記（適合國小學生）
 
-1. 註解 (Comment)
-   在程式中，# 後面的部分叫做「註解」，它不會執行，只是給程式設計師做說明使用。
+#### 一、基本數字與資料型態
 
-# 這是單行註解
+1. **數字輸出**
+   你可以直接輸出數字，像這樣：
 
-# print("Hello World") # 這行程式不會執行
+   ```python
+   print(6438)  # 顯示數字6438
+   print(3.14)  # 顯示小數3.14
+   ```
 
-2. 基本資料類型
-   Python 有不同的資料類型，你可以使用它們來處理不同的資訊：
+2. **布林值**
+   布林值是對或錯，通常是 `True`（對） 或 `False`（錯）：
 
-整數 (Integer)：像 6438 這樣的數字。
-print(6438)
-浮點數 (Float)：像 3.14 這樣的小數。
-print(3.14)
-布林值 (Boolean)：True 或 False，可以用來表示「對」或「錯」。
-print(True)
-print(False)
-字串 (String)：像 "Hello World" 這樣的文字。
-print("Hello World")
+   ```python
+   print(True)   # 顯示 True
+   print(False)  # 顯示 False
+   ```
 
-3. 變數 (Variable)
-   變數就像是一個裝東西的箱子，你可以把數字、文字等東西放進去，並且改變它們的內容：
+3. **字串輸出**
+   字串是由文字組成的內容，像是名字或是一句話：
 
-創建一個變數並賦值：
+   ```python
+   print("Hello World")  # 顯示文字
+   print("y" + "e" * 100)  # 顯示 y 之後跟著100個 e
+   ```
 
-a = 10 # a 是一個變數，現在它裡面放著數字 10
-print(a)
-你可以隨時重新賦值給變數：
+#### 二、變數和運算
 
-a = 20 # a 現在變成 20 了
-print(a)
-你也可以把變數的內容改成不同的資料類型：
+1. **變數**
+   變數就像是一個盒子，可以放進任何資料。可以隨時改變盒子裡面的東西：
 
-a = "apple" # a 變成了字串 "apple"
-print(a) 4. 數學運算
-Python 可以進行很多數學運算：
+   ```python
+   a = 10  # 把10放進變數a
+   print(a)  # 顯示a的內容：10
+   a = 20  # 把20放進a
+   print(a)  # 顯示a的內容：20
+   a = "apple"  # 把字串"apple"放進a
+   print(a)  # 顯示a的內容：apple
+   ```
 
-加法 (+)、減法 (-)、乘法 (\*)、除法 (/)：
+2. **數學運算**
+   Python 支援基本的數學運算：
 
-print(7 + 3) # 加法
-print(7 - 3) # 減法
-print(7 \* 3) # 乘法
-print(7 / 3) # 除法
-整數除法 (//) 和餘數 (%):
+   ```python
+   print(7 + 3)  # 加法
+   print(7 - 3)  # 減法
+   print(7 * 3)  # 乘法
+   print(7 / 3)  # 除法
+   print(7 // 3)  # 整數除法
+   print(7 % 3)  # 取餘數
+   print(2**3)  # 指數運算，2的3次方
+   ```
 
-print(7 // 3) # 只取整數部分
-print(7 % 3) # 取餘數
-指數運算 (\*\*):
+3. **字串連接**
+   字串可以相加，像這樣：
 
-print(2 \*\* 3) # 2 的 3 次方，結果是 8 5. 字串操作
-Python 可以做很多有趣的字串處理：
+   ```python
+   s1 = "Hello"
+   s2 = "World"
+   s3 = s1 + " " + s2  # 把s1和s2用空格連接起來
+   print(s3)  # 顯示: Hello World
+   ```
 
-連接兩個字串：
+#### 三、型態轉換
 
-s1 = "Hello"
-s2 = "World"
-s3 = s1 + " " + s2 # 將 s1 和 s2 用空格連接起來
-print(s3) # 結果是 "Hello World"
-重複字串：
+1. **從一種型態轉換為另一種型態**
 
-print("y" + "e" \* 100) # 把 "e" 重複 100 次，然後和 "y" 連接
-使用 f-string 快速插入變數到字串裡：
+   - **從布林值到數字**：
 
-name = "Python"
-age = 31
-new_str = f"我是{name}, 今年{age}歲"
-print(new_str) # 結果是 "我是 Python, 今年 31 歲" 6. 變數類型 (Data Types)
-你可以檢查變數的類型，看看它是整數、字串，還是其他類型：
+     ```python
+     print(int(True))  # 顯示 1
+     print(int(False)) # 顯示 0
+     ```
 
-檢查類型：
+   - **從數字到字串**：
 
-print(type(True)) # 布林值
-print(type(123)) # 整數
-print(type(123.0)) # 浮點數
-print(type("Hello")) # 字串 7. 型態轉換 (Type Conversion)
-你可以把一個類型的資料轉換成另一個類型：
+     ```python
+     print(str(1000))  # 把1000變成字串："1000"
+     ```
 
-整數轉換：
+2. **從數字到浮點數**：
 
-print(int(True)) # True 轉換成 1
-print(int(3.14)) # 3.14 轉換成 3
-浮點數轉換：
+   ```python
+   print(float(123))  # 123會變成123.0
+   ```
 
-print(float(123)) # 123 變成 123.0
-布林值轉換：
+#### 四、使用 `input` 讓使用者輸入資料
 
-print(bool(0)) # 0 變成 False
-print(bool(1)) # 1 變成 True
-print(bool("")) # 空字串變成 False
-print(bool("Hello")) # 非空字串變成 True
-字串轉換：
+1. **接收使用者的輸入**
+   你可以讓使用者輸入資料，然後程式會處理這些資料：
 
-print(str(True)) # True 變成字串 "True" 8. 使用 input() 函數
-input() 函數讓我們能夠從使用者那裡接收資料。你可以提示使用者輸入資料，並將它存到一個變數裡：
+   ```python
+   get = input("請輸入數字: ")
+   print(get)  # 顯示使用者輸入的內容
+   print(type(get))  # 顯示輸入的型態（字串）
+   ```
 
-讓使用者輸入資料：
+2. **計算圓的面積**
+   使用者可以輸入圓的半徑，然後計算圓的面積：
 
-get = input("請輸入數字: ") # 提示使用者輸入數字
-print(get) # 顯示使用者輸入的資料
-print(type(get)) # 顯示資料的類型，會是字串
-將使用者輸入的資料轉換成數字來計算：
+   ```python
+   get = input("請輸入半徑長度: ")
+   get = int(get)  # 把輸入的內容變成整數
+   area = 3.14 * get**2  # 圓的面積公式
+   print(f"圓的面積為: {area}")  # 顯示面積
+   ```
 
-get = input("請輸入半徑長度") # 請使用者輸入半徑
-get = int(get) # 把輸入的字串轉成整數
-area = 3.14 \* get \*\* 2 # 計算圓的面積
-print(f"圓的面積為: {area}") # 顯示圓的面積
+#### 五、進階：用 Streamlit 顯示網頁
 
-class2
+1. **簡單顯示標題與內容**
+   使用 `Streamlit` 可以快速顯示網頁內容，像這樣：
 
-1. 標題 (st.title())
-   使用 st.title() 來設定頁面的標題，這個標題會顯示在網頁的最上方。
+   ```python
+   import streamlit as st
 
-python
-複製
-編輯
-st.title("這是標題") # 設定頁面標題 2. 顯示文字 (st.write())
-st.write() 是一個通用的函數，可以顯示文字、數字、圖像等資料。
+   st.title("這是標題")  # 顯示大標題
+   st.write("這是write寫的內容")  # 顯示文字
+   st.text("這是text寫的內容")  # 顯示文字，會跟 `write` 不同
+   ```
 
-python
-複製
-編輯
-st.write("這是 write 寫的內容") # 顯示一般的文字 3. 顯示純文字 (st.text())
-如果你只想顯示純文字，可以使用 st.text()，它會顯示一段單純的文字，不會有任何格式化。
+2. **Markdown 語法**
+   可以使用 `Markdown` 語法來顯示更豐富的內容：
 
-python
-複製
-編輯
-st.text("這是 text 寫的內容") # 顯示純文字 4. Markdown 格式 (st.markdown())
-Markdown 是一種簡單的文字格式語言，透過它，我們可以做出各種格式化效果。比如說，粗體、斜體、標題、列表、程式碼區塊等。你可以使用 st.markdown() 來顯示 Markdown 格式的文字。
+   ````python
+   st.markdown(
+       """
+       這是markdown寫的字串
+       * **粗體字**
+       * *斜體字*
+       * [連結](https://www.example.com)
+       ```python
+       print("Hello World")
+       ```
+       # 這是標題1
+       ## 這是標題2
+       ### 這是標題3
+       #### 這是標題4
+       """
+   )
+   ````
 
-python
-複製
-編輯
-st.markdown(
-"""
-這是 markdown 寫的字串
-_ **粗體字** # 這會顯示粗體
-_ _斜體字_ # 這會顯示斜體 \* [連結](https://www.example.com) # 這是超連結
-`python
-    print("Hello World")  # 這是程式碼區塊
-    ` # 這是標題 1 ## 這是標題 2 ### 這是標題 3 #### 這是標題 4
-"""
-)
-在這段程式碼裡，我們用 Markdown 語法來格式化一些文字：
+---
 
-粗體字：用 \*\* 包住文字，會讓文字變成粗體。
+### 小結
 
-斜體字：用 \* 包住文字，會讓文字變成斜體。
-
-連結：使用 [文字](網址) 的格式來創建一個超連結。
-
-程式碼區塊：用三個反引號 ``` 包住程式碼，這樣會顯示成程式碼樣式。
-
-標題：用 # 來創建不同層級的標題，# 是最大標題，#### 是最小標題。
-
-總結：
-st.title() 讓你設置頁面標題。
-
-st.write() 用來顯示一般的文字。
-
-st.text() 用來顯示純文字。
-
-st.markdown() 讓你使用 Markdown 格式，讓頁面變得更加有層次和有趣。
+今天我們學習了很多關於 Python 的基本知識，從數字運算、變數，到讓使用者輸入資料，還有簡單的網頁顯示！繼續練習，慢慢你會發現 Python 是一個非常有趣的語言，能做很多事情哦！
