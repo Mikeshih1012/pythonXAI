@@ -86,6 +86,6 @@ print(type(get))
 
 get = input("請輸入半徑長度")
 get = int(get)
-area = 3.14 * r**2
+area = 3.14 * get**2
 # print(get**2 * 3.14)
 print(f"圓的面積為: {area}")
