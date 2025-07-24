@@ -1,13 +1,11 @@
 import random
 
-n = input("次數")
-
 
 def roll_dice(n):
     save = []
     for i in range(n):
-        number = random.randint()
-        save_append(number)
+        number = random.randint(1, 6)
+        save.append(number)
     return save
 
 
