@@ -5,11 +5,8 @@ import random
 
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 
-with open("question/quizzes.json", "r", encoding="utf-8") as f:
-    data = json.load(f)
-    if "pick" not in st.session_state:
-        st.session_state.pick = random.randrange(len(data))
-    quiz = data[st.session_state.pick]
+with open("question/quiz.json", "r", encoding="utf-8") as f:
+    quiz = json.load(f)
 
 if "system_message" not in st.session_state:
     st.session_state.system_message = f"你是海龜湯遊戲主持人\n你要先說題目\n你不能說出答案只能在答對時說對答錯時說錯如果答案很接近正解時輸出遊戲結束並說出完整答案\n題目:{quiz['title']}\n正解:{quiz['answer']}"
